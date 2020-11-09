@@ -1,0 +1,19 @@
+{
+  "name": "slack-bit-camp-week-1",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Alissa Renz (@misscoded)",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/bolt": "^2.3.0",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.6"
+  },
+  "devDependencies": {},
+  "description": "Code sample for week 1 curriculum of Slack <> Bit Camp"
+}
