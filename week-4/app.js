@@ -14,6 +14,8 @@ const app = new App({
   receiver
 });
 
+const GITHUB_REPO_URL = 'https://api.github.com/repos/misscoded/slack-bit-camp';
+
 /**
  * To create a custom endpoint for our Slack app, we rely on 
  * the ExpressReceiver's router property.
@@ -85,26 +87,26 @@ receiver.router.post('/github-issues', async (req, res) => {
  */
 app.event('app_home_opened', async ({ event, client }) => {
 
-  const { data: issues } = await axios.get('https://api.github.com/repos/misscoded/slack-bit-camp/issues');
+  const { data: issues } = await axios.get(`${GITHUB_REPO_URL}/issues`);
 
   const issueBlocks = issues.map(issue => ({
-    type: "section",
+    type: 'section',
     text: {
-      type: "mrkdwn",
-      text: `<https://api.github.com/repos/misscoded/slack-bit-camp/issues/2|${issue.title}> opened by <${issue.user.url}|${issue.user.login}>`
+      type: 'mrkdwn',
+      text: `<${issue.html_url}|${issue.title}> opened by <${issue.user.html_url}|${issue.user.login}>`
     },
   }));
 
   await client.views.publish({
     user_id: event.user,
     view: {
-      type: "home",
+      type: 'home',
       blocks: [
         {
-          type: "header",
+          type: 'header',
           text: {
-            type: "plain_text",
-            text: "Open Issues"
+            type: 'plain_text',
+            text: 'Open Issues'
           },
         },
         ...issueBlocks,
