@@ -1,0 +1,24 @@
+{
+  "name": "slack-bit-camp-week-4",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/misscoded/slack-bit-camp.git"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "Alissa Renz (@misscoded)",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/bolt": "^2.3.0",
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.6"
+  },
+  "devDependencies": {},
+  "description": "Code sample for week 4 curriculum of Slack <> Bit Camp"
+}
