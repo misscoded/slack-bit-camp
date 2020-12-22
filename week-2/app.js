@@ -8,26 +8,6 @@ const app = new App({
 });
 
 /**
- * Messages can be listened for, using specific words and phrases.
- * Note: your Slack app *must* be subscribed to the following events
- * and scopes, as well as be present in the channels where they occur.
- * 
- * Please see the 'Event Subscriptions' and 'OAuth & Permissions'
- * sections of your app's configuration to add the following:
- * 
- * Event subscription required:   messages.channels
- * OAuth scope required:          chat:write
- * 
- * Further Information & Resources
- * https://slack.dev/bolt-js/concepts#message-listening
- * https://api.slack.com/messaging/retrieving#permissions
- */
-app.message('hello', async ({ message, say }) => {
-  await say(`Hello, <@${message.user}>!`);
-});
-
-
-/**
  * Shortcuts can be global (accessible from anywhere in Slack), 
  * or specific to messages (shown only in message context menus).
  * 

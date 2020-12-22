@@ -2,6 +2,10 @@
   "name": "slack-bit-camp-week-2",
   "version": "1.0.0",
   "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/misscoded/slack-bit-camp.git"
+  },
   "type": "module",
   "scripts": {
     "start": "nodemon app.js"
